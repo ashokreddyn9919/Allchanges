@@ -1,0 +1,59 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <omnistudio-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </omnistudio-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <omnistudio-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></omnistudio-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <omnistudio-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12"  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small" style="">
+          <div data-style-id="state0element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-flex-datatable data-style-id="state0element0_child"   card={card}  record={record}  issearchavailable="false"  issortavailable="true"  records={records}  columns='\[]'  theme="slds"  ></omnistudio-flex-datatable>
+      </div><div data-style-id="state0element1" class="slds-col  slds-text-align_left  slds-size_5-of-12  " data-rindex={rindex} style="background-color:#FF9A02;      
+     height:100px; min-height:100px;   " ><omnistudio-flex-icon data-style-id="state0element1_child"   card={card}  record={record}  icon-type=""  icon-name="standard:default"  size="medium"  extraclass="slds-icon-standard-default"  variant="inverse"  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element2" class="slds-col  slds-text-align_center  slds-size_7-of-12  " data-rindex={rindex} style="background-color:#E7E7DD;      
+         " ><omnistudio-output-field data-style-id="state0element2_child"   card={card}  record={record}  merge-field="%3Cdiv%3EThis%20is%20flexcard!!%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div>
+      </omnistudio-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <omnistudio-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12"  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small" style="">
+          <div data-style-id="state0element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-flex-datatable data-style-id="state0element0_child"   card={card}  record={record}  issearchavailable="false"  issortavailable="true"  records={records}  columns='\[]'  theme="slds"  ></omnistudio-flex-datatable>
+      </div><div data-style-id="state0element1" class="slds-col  slds-text-align_left  slds-size_5-of-12  " data-rindex={rindex} style="background-color:#FF9A02;      
+     height:100px; min-height:100px;   " ><omnistudio-flex-icon data-style-id="state0element1_child"   card={card}  record={record}  icon-type=""  icon-name="standard:default"  size="medium"  extraclass="slds-icon-standard-default"  variant="inverse"  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element2" class="slds-col  slds-text-align_center  slds-size_7-of-12  " data-rindex={rindex} style="background-color:#E7E7DD;      
+         " ><omnistudio-output-field data-style-id="state0element2_child"   card={card}  record={record}  merge-field="%3Cdiv%3EThis%20is%20flexcard!!%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div>
+      </omnistudio-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <omnistudio-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </omnistudio-action>
+  
+            <omnistudio-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </omnistudio-action>
+            </div>
+          </template>
