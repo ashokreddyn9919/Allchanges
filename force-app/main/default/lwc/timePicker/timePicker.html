@@ -1,0 +1,30 @@
+<template>
+    <div class="slds-form-element">
+        <div class="slds-form-element__control">
+            <div class="slds-grid">
+                <div class="slds-col slds-size_2-of-12">
+                    <lightning-combobox
+                            name="hour"
+                            label="Hour"
+                            value={startHour}
+                            placeholder="Select Hour"
+                            options={hourOptions}
+                            required
+                            onchange={handleHourChange}>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col slds-size_2-of-12">
+                    <lightning-combobox
+                            name="minute"
+                            label="Minute"
+                            value={startMinute}
+                            placeholder="Select Minute"
+                            options={minuteOptions}
+                            required
+                            onchange={handleMinuteChange}>
+                    </lightning-combobox>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

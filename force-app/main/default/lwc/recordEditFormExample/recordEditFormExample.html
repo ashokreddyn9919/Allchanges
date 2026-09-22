@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title="Edit Account Record" icon-name="standard:account">
+        <div class="slds-p-horizontal_small">
+            <!-- Record Edit Form -->
+            <lightning-record-edit-form
+                object-api-name={objectApiName}
+                record-id={recordId}
+                onsuccess={handleSuccess}
+                onerror={handleError}
+            >
+                <lightning-messages></lightning-messages>
+
+                <!-- Customized Name Field -->
+                <lightning-input-field field-name={NAME_FIELD}>
+                    <label slot="label">Custom Name Label</label>
+                </lightning-input-field>
+
+                <!-- Account Number Field -->
+                <lightning-input-field field-name={ACCOUNT_NUMBER_FIELD}>
+                    <label slot="label">Custom Account Number Label</label>
+                </lightning-input-field>
+
+                <!-- Action Buttons -->
+                <div class="slds-m-top_medium">
+                    <lightning-button class="slds-m-right_small" variant="brand" type="submit" label="Save"></lightning-button>
+                    <lightning-button variant="neutral" label="Cancel"></lightning-button>
+                </div>
+            </lightning-record-edit-form>
+        </div>
+
+        <!-- Related Accounts Section -->
+        <template if:true={relatedAccounts}>
+            <div class="slds-m-top_medium">
+                <lightning-card title="Related Accounts" icon-name="standard:account">
+                    <ul class="slds-m-around_small">
+                        <template for:each={relatedAccounts} for:item="account">
+                            <li key={account.Id}>
+                                {account.Name} - {account.AccountNumber}
+                            </li>
+                        </template>
+                    </ul>
+                </lightning-card>
+            </div>
+        </template>
+    </lightning-card>
+</template>

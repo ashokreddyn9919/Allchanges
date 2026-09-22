@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NewReqs</fullName>
+    <columns>NAME</columns>
+    <columns>Amount__c</columns>
+    <columns>Cost_Center__c</columns>
+    <columns>purchase_manager__c</columns>
+    <columns>Vendor__c</columns>
+    <columns>Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Requisition Submitted</value>
+    </filters>
+    <label>New Reqs</label>
+</ListView>

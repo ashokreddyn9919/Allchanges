@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Contact Lookup" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <lightning-input
+                type="text"
+                label="Search Contacts"
+                placeholder="Search by name"
+                value={searchKey}
+                onchange={handleSearchChange}>
+            </lightning-input>
+
+            <template if:true={contactOptions.length}>
+                <div class="slds-box slds-m-top_small">
+                    <ul>
+                        <template for:each={contactOptions} for:item="contact">
+                            <li key={contact.value} class="slds-m-bottom_small">
+                                <a href="javascript:void(0);" data-id={contact.value} onclick={handleContactSelect}>
+                                    {contact.label}
+                                </a>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </template>
+            <template if:true={selectedContactName}>
+                <p class="slds-m-top_medium">Selected Contact: {selectedContactName}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

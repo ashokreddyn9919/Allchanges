@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Parent" icon-name="standard:person_account">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-3">
+                <p class="slds-m-left_small">Child One: {greeting}</p>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <p class="slds-m-left_small">Child Two: {second}</p>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <p class="slds-m-left_XX-small">Child Three: {third}</p>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters">            
+            <div class="slds-col slds-p-around_large slds-size_1-of-3 slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
+                <c-child-one onmyfirstchild = {handleCustomEventA}></c-child-one>
+            </div>
+            <div class="slds-col slds-p-around_large slds-size_1-of-3 slds-box slds-box_x-small slds-m-around_x-small">
+                <c-child-two onmysecondchild = {handleCustomEventB}></c-child-two>
+            </div>
+            <div class="slds-col slds-p-around_large slds-size_1-of-3 slds-box slds-box_x-small slds-m-around_x-small">
+                <c-child-three onmythirdchild = {handleCustomEventC}></c-child-three>
+            </div>
+        </div>       
+    </lightning-card>
+</template>

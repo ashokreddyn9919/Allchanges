@@ -1,0 +1,30 @@
+<template>
+    <lightning-card  icon-name="standard:investment_account"   variant="narrow"   title="tactic data" >
+      <lightning-record-view-form record-id={recordId} object-api-name="Campaign">
+         <div class="slds-grid slds-wrap">
+           <div class="slds-col slds-size_1-of-2">
+              <div class="slds-p-around_medium">
+                <lightning-output-field field-name="field1" class="slds-m-right_x-small"></lightning-output-field>
+                  <lightning-output-field field-name="field2"></lightning-output-field>
+                    <template if:true={ObjectInfo.data}>
+                   <template if:true={isrecordTypeNameB}>
+                      <lightning-output-field field-name="field3"></lightning-output-field>
+                    </template>   
+                    </template>               
+                          </div>
+                         </div>
+                         <div class="slds-col slds-size_1-of-2">
+                       <div class="slds-p-around_medium">
+                     <lightning-output-field field-name="field4" class="slds-m-right_x-small"></lightning-output-field>
+                   <lightning-output-field field-name="field5"></lightning-output-field>
+                   <template if:true={ObjectInfo.data}>
+                   <template if:true={isrecordTypeNameB}>
+                 <lightning-output-field field-name="field6"></lightning-output-field>
+                </template>
+                </template> 
+              </div>
+            </div>
+         </div>
+       </lightning-record-view-form>    
+    </lightning-card>
+ </template>

@@ -1,0 +1,24 @@
+<template>
+    <lightning-card variant="Narrow" title=" Without Filer Lightning Record Picker" icon-name="standard:account">
+        <lightning-record-picker
+            label="Select a record"
+            aria-placeholder="Search.."
+            object-api-name="Contact"
+            onchange={handleContactChange}
+            value={selectedRecordId}>
+        </lightning-record-picker>
+    </lightning-card>
+    
+    <lightning-card variant="Narrow" title="Filter Lightning Record Picker" icon-name="standard:account">
+        <lightning-record-picker
+            label="Select a record"
+            aria-placeholder="Search..."
+            object-api-name="Contact"
+            onchange={handleChange1}
+            matching-info={matchingInfo}
+            display-info={displayInfo}
+            filter={filter}
+            >
+        </lightning-record-picker>
+    </lightning-card>
+</template>

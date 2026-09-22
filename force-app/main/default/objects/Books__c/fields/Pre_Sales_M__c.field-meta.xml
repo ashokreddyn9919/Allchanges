@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pre_Sales_M__c</fullName>
+    <label>Pre Sales M</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Test1</fullName>
+                <default>false</default>
+                <label>Test1</label>
+            </value>
+            <value>
+                <fullName>Test2</fullName>
+                <default>false</default>
+                <label>Test2</label>
+            </value>
+            <value>
+                <fullName>Test3</fullName>
+                <default>false</default>
+                <label>Test3</label>
+            </value>
+            <value>
+                <fullName>Test4</fullName>
+                <default>false</default>
+                <label>Test4</label>
+            </value>
+            <value>
+                <fullName>Test5</fullName>
+                <default>false</default>
+                <label>Test5</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SupportedCurrencies</fullName>
+    <inlineHelpText>The currencies to make available to buyers. Options come from the currencies that are supported by your org.</inlineHelpText>
+</CustomField>

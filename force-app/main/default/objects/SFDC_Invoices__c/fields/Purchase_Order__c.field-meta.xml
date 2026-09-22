@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Purchase_Order__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Purchase Order</label>
+    <referenceTo>SFDC_Purchase_Order__c</referenceTo>
+    <relationshipName>R00N40000001Q7EyEAK</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

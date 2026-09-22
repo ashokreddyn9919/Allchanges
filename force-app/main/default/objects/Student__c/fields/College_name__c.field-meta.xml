@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>College_name__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>College name</description>
+    <label>College Name</label>
+    <referenceTo>College__c</referenceTo>
+    <relationshipLabel>Students</relationshipLabel>
+    <relationshipName>Students</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

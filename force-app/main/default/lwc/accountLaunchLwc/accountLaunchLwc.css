@@ -1,0 +1,6 @@
+.recordtype-box {
+    cursor: pointer;
+}
+.recordtype-box:hover {
+    background: #f3f3f3;
+}

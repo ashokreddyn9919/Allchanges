@@ -1,0 +1,26 @@
+<template>
+    <lightning-card  title="Hello">
+        <lightning-button label="New" slot="actions"></lightning-button>
+        <p class="slds-p-horizontal_small">Card Body (custom component)</p>
+        <p slot="footer">Card Footer</p>
+    </lightning-card>
+    
+  <div class="slds-form-element">
+        <label class="slds-form-element__label" for="lookupInput">Account</label>
+        <div class="slds-form-element__control">
+            <lightning-input
+                type="text"
+                label="Search Accounts"
+                value={searchKey}
+                onchange={handleSearch}>
+            </lightning-input>
+            <ul class="slds-listbox slds-listbox_vertical" if:true={accounts}>
+                <template for:each={accounts} for:item="account">
+                    <li key={account.Id} class="slds-listbox__item" onclick={handleSelect}>
+                        <span>{account.Name}</span>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </div>
+</template>

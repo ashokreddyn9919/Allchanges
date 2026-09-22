@@ -1,0 +1,8 @@
+<template>
+    <a onclick={handleBookSelect}>
+        <div class={isBookSelected} >
+            <p key={book.Id} class="title slds-cell-wrap slds-m-bottom_xx-small slds-text-title_bold">{book.Title__c}</p>
+            <img src={book.image_url__c} class="portrait">
+        </div>
+    </a>
+</template>

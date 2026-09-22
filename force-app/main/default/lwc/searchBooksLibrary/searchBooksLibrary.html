@@ -1,0 +1,27 @@
+<template>
+        <lightning-card>
+            <h2 slot="title">
+                <lightning-icon icon-name="utility:search" size="small"></lightning-icon>
+                Search books in Library:</h2>
+                <lightning-input class="slds-m-bottom_small slds-m-left_small slds-m-right_small" placeholder="Enter Titile to search..." onchange={handleKeyChange} value={BookTitile}></lightning-input>
+                <div class="slds-m-left_small slds-m-bottom_small slds-badge">
+                    <p>Display Results :{DisplayCount}</p>
+                </div>
+                <lightning-layout multiple-rows="4">
+                    <template for:each={visibleBooks} for:item="book" for:index="index">
+                        <lightning-layout-item size="4" key={visibleBooks.key} pull-to-boundary="small">
+                            <div class="custom-box slds-card slds-p-around_small slds-text-align_left slds-text-body_regular">
+                            <c-book-tile book={book} onbookselect={bookSelectHandler} book-selected-id={selectedBookId}></c-book-tile>
+                            <p key={book.Id}>Author:{book.Author__c}</p>
+                            <p key={book.Id}>Publisher:{book.Publisher__c}</p>
+                            <p key={book.Id}>ISBN13:{book.ISBN13__c}</p>
+                            <p key={book.Id}>Year Published:{book.Year_Published__c}</p>
+                            <p key={book.Id}>Average Rating:{book.Average_Rating__c}</p></div>
+                        </lightning-layout-item>                   
+                    </template>
+                 </lightning-layout>
+                <div slot="footer" class="slds-var-m-horizontal_medium">
+                    <c-pagination-book records={BooksList} onupdate={updateBookHandler}></c-pagination-book>
+                </div>
+        </lightning-card>
+</template>

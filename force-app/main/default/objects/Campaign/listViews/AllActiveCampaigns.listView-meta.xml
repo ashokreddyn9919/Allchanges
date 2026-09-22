@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllActiveCampaigns</fullName>
+    <columns>CAMPAIGN.START_DATE</columns>
+    <columns>CAMPAIGN.END_DATE</columns>
+    <columns>Duration1__c</columns>
+    <columns>CAMPAIGN.STATUS</columns>
+    <columns>C_Start_Date__c</columns>
+    <columns>c_end_date__c</columns>
+    <columns>Duration__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Active Campaigns</label>
+</ListView>

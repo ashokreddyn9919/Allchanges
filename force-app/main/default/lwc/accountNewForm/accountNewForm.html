@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="New Account">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Account Name" value={name} onchange={handleName}></lightning-input>
+
+            <div class="slds-m-top_medium">
+                <lightning-button label="Save" variant="brand" onclick={handleSave}></lightning-button>
+                <lightning-button label="Cancel" class="slds-m-left_small" onclick={handleCancel}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

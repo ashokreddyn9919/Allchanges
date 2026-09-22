@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="WireListViewToken">
+        <template if:true={records}>
+            <div class="slds-m-around_medium">
+                <template for:each={records} for:item="record">
+                    <p key={record.fields.Id.value}>
+                        {record.fields.Name.value}
+                    </p>
+                </template>
+            </div>
+        </template>
+        <div class="slds-grid">
+            <div class="slds-m-around_medium">
+                <lightning-button label="Previous" onclick={handlePreviousPage}></lightning-button>
+            </div>
+            <div class="slds-m-around_medium slds-col_bump-left">
+                <lightning-button label="Next" onclick={handleNextPage}></lightning-button>
+              </div>
+        </div>
+    </lightning-card>
+</template>

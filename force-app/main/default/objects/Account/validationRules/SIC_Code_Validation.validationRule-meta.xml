@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SIC_Code_Validation</fullName>
+    <active>false</active>
+    <errorConditionFormula>NOT(REGEX( Sic  ,&quot;^[A-Z0-9]*$&quot;))</errorConditionFormula>
+    <errorDisplayField>Sic</errorDisplayField>
+    <errorMessage>Please enter a valid SIC Code.</errorMessage>
+</ValidationRule>

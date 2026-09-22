@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsApproachingDiscountApplicable</fullName>
+    <inlineHelpText>Notifies customers if their cart total is approaching a discount. To add an approaching discount alert, set a threshold value on the promotion qualifier.</inlineHelpText>
+    <trackHistory>false</trackHistory>
+</CustomField>

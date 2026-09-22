@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MyPendingApprovals</fullName>
+    <columns>NAME</columns>
+    <columns>Approver__c</columns>
+    <columns>Invoices__c</columns>
+    <columns>Approval_Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Approval_Status__c</field>
+        <operation>equals</operation>
+        <value>Pending</value>
+    </filters>
+    <label>My Pending Approvals</label>
+</ListView>

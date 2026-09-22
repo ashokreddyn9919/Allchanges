@@ -1,0 +1,30 @@
+.tile {
+    padding: 8px;
+    background-color: #FFFFFF;
+    border-radius: 0.25rem;
+  }
+  
+  a {
+  color: inherit;
+  }
+  
+  .title {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .selected{
+    border-width: medium;
+    border-radius: 4px;
+    border-color: royalblue;
+    border-style: solid;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .portrait {
+    height: 180px;
+    width: 140px;
+  }

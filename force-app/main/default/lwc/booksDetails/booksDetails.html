@@ -1,0 +1,63 @@
+<template>
+    <template if:true={bookFound}>
+        <lightning-card>
+            <h2 slot="title">
+                <lightning-icon icon-name="standard:display_rich_text" size="small"></lightning-icon>
+                    Book Details: {bookTitle}</h2>
+            <div slot="actions">
+                <lightning-button label="Update Book" onclick={updateDetails}></lightning-button>
+            </div>
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" small-device-size="6" medium-device-size="6" large-device-size="6">
+                    <img src={bookImage} class="portrait slds-p-left_medium" alt="Book Picture"/>
+                </lightning-layout-item>
+    
+                <lightning-layout-item size="12" small-device-size="6" medium-device-size="6" large-device-size="6">
+                    <div class="slds-p-horizontal_small">
+                        <div class="bookProperty slds-list_horizontal">
+                            <span class="label">Author:</span>
+                            <lightning-formatted-text value={bookAuthor}></lightning-formatted-text>
+                        </div>
+                        <div class="bookProperty slds-list_horizontal">
+                            <p class="label">Publisher:</p>
+                            <lightning-formatted-text value={bookPublisher}></lightning-formatted-text>
+                        </div>
+                        <div class="bookProperty slds-list_horizontal">
+                            <span class="label">ISBN13:</span>
+                            <p>{bookISBN3}</p>                            
+                        </div>
+                        <div class="bookProperty slds-list_horizontal">
+                            <span class="label">ISBN:</span>
+                            <p>{bookISBN}</p>                            
+                        </div>
+                        <div class="bookProperty slds-list_horizontal">
+                            <span class="label">Year Published:</span>
+                            <p>{bookYear}</p>                            
+                        </div>
+                        <div class="bookProperty slds-list_horizontal">
+                            <span class="label">Binding:</span>
+                            <p>{bookBinding}</p>                            
+                        </div>
+                        <div class="bookProperty slds-list_horizontal">
+                            <span class="label">Number of Pages:</span>
+                            <p>{bookPages}</p>                            
+                        </div>
+                        <div class="bookProperty slds-list_horizontal">
+                            <span class="label">Goodreads Id:</span>
+                            <p>{bookGoodReads}</p>                            
+                        </div>
+                        <div class="bookProperty slds-list_horizontal">
+                            <span class="label">Average Rating:</span>
+                            <P>{bookRating}</P>                            
+                        </div>
+                    </div>
+                    <div class="slds-clearfix">
+                        <div class="slds-float_right slds-p-right_medium">
+                            <lightning-button label="Delete Book" class="slds-m-left_small" onclick={handlerDeleteBook}></lightning-button>
+                        </div>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+    </template>
+</template>

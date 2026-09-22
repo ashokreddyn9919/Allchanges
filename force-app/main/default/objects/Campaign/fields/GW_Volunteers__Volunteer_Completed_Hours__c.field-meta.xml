@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GW_Volunteers__Volunteer_Completed_Hours__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Total number of Volunteer Hours with a Status of Completed. Hours with other status values aren&apos;t included.</inlineHelpText>
+    <label>Volunteer Completed Hours</label>
+    <summarizedField>GW_Volunteers__Volunteer_Job__c.GW_Volunteers__Number_of_Completed_Hours__c</summarizedField>
+    <summaryForeignKey>GW_Volunteers__Volunteer_Job__c.GW_Volunteers__Campaign__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <type>Summary</type>
+</CustomField>

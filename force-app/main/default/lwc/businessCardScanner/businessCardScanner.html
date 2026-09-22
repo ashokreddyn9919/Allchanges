@@ -1,0 +1,101 @@
+<template>
+    <lightning-card title="Business Card Scanner" icon-name="utility:scan_card">
+        <div class="slds-p-around_medium">
+
+            <template if:true={errorMessage}>
+                <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+                    <span class="slds-assistive-text">Error</span>
+                    <h2>{errorMessage}</h2>
+                </div>
+                <div class="slds-m-top_small"></div>
+            </template>
+
+            <template if:false={mobileSupported}>
+                <div class="slds-text-color_error">
+                    Document scanning is supported only in the Salesforce Mobile App.
+                </div>
+                <div class="slds-m-top_small"></div>
+            </template>
+
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" class="slds-m-bottom_small">
+                    <lightning-button
+                        variant="brand"
+                        label="Scan Business Card"
+                        onclick={handleScan}
+                        disabled={scanDisabled}>
+                    </lightning-button>
+                    <lightning-button
+                        label="Mock Scan (Desktop Test)"
+                        onclick={handleMockScan}
+                        class="slds-m-left_small">
+                        </lightning-button>
+                    <lightning-button
+                        class="slds-m-left_small"
+                        label="Reset"
+                        onclick={handleReset}
+                        disabled={resetDisabled}>
+                    </lightning-button>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" class="slds-m-bottom_small">
+                    <lightning-radio-group
+                        name="recordType"
+                        label="Create Record As"
+                        options={createAsOptions}
+                        value={createAs}
+                        type="button"
+                        onchange={handleCreateAsChange}>
+                    </lightning-radio-group>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" class="slds-m-bottom_small">
+                    <lightning-input label="Full Name" value={fullName} onchange={onFullNameChange}></lightning-input>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" class="slds-m-bottom_small">
+                    <lightning-input type="email" label="Email" value={email} onchange={onEmailChange}></lightning-input>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" class="slds-m-bottom_small">
+                    <lightning-input type="tel" label="Phone" value={phone} onchange={onPhoneChange}></lightning-input>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" class="slds-m-bottom_small">
+                    <lightning-input label="Company Name" value={company} onchange={onCompanyChange}></lightning-input>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" class="slds-m-bottom_small">
+                    <lightning-textarea label="Location / Address" value={locationText} onchange={onLocationTextChange}></lightning-textarea>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" class="slds-m-bottom_small">
+                    <lightning-input label="Captured Time" value={capturedTimeDisplay} disabled></lightning-input>
+                </lightning-layout-item>
+
+                <template if:true={hasGeo}>
+                    <lightning-layout-item size="12" class="slds-m-bottom_small">
+                        <lightning-input label="GPS (Lat, Long)" value={geoDisplay} disabled></lightning-input>
+                    </lightning-layout-item>
+                </template>
+
+                <lightning-layout-item size="12" class="slds-m-top_small">
+                    <lightning-button
+                        variant="success"
+                        label={saveLabel}
+                        onclick={handleSave}
+                        disabled={saveDisabled}>
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <template if:true={rawText}>
+                <div class="slds-m-top_medium slds-text-title_caps">OCR Raw Text</div>
+                <div class="slds-box slds-m-top_x-small" style="white-space: pre-wrap;">
+                    {rawText}
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

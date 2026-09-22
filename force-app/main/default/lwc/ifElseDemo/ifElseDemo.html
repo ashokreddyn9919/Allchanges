@@ -1,0 +1,20 @@
+<template>
+    <div class="slds-grid" style="height:300px; width:500px">
+        <div class="slds-col slds-size_1-of-2 slds-align_absolute-center">
+            <template if:true={showJerry}>
+                <img src={JerryImage} width="200" height="200">
+            </template>
+            <template if:true={showtom}>
+                <img src={TomImage} width="200" height="200">
+            </template>            
+        </div>
+        <div class="slds-col slds-size_1-of-2 slds-align_absolute-center" >
+            <template if:true={Tom}>
+                <lightning-button variant="brand" label="Show Jerry" title="Primary action" onclick={handleshowjerry} class="slds-m-left_x-small"></lightning-button>
+            </template>
+            <template if:true={Jerry}>
+                <lightning-button variant="brand" label="Show Tom" title="Primary action" onclick={handleshowtom} class="slds-m-left_x-small"></lightning-button>
+            </template>
+        </div>
+    </div>
+</template>

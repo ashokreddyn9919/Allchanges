@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Filtered Account Lookup" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <!-- Search and Filter -->
+            <template if:true={relatedAccounts}>
+                <lightning-combobox
+                    label="Select Account"
+                    options={accountOptions}
+                    value={selectedAccount}
+                    placeholder="Select a related account"
+                    onchange={handleAccountChange}>
+                </lightning-combobox>
+            </template>
+            
+            <!-- No Results Message -->
+            <template if:false={relatedAccounts}>
+                <p>No related accounts found.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

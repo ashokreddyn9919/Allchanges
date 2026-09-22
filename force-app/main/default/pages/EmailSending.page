@@ -1,0 +1,14 @@
+<apex:page controller="emailSending">
+    <p>
+        Test Email Sending:
+    </p>
+    <apex:form >
+        <apex:outputLabel value="Send Mail To: " for="To"/>
+        <apex:inputText value="{!toMail}" id="To"/><br/>
+        <apex:outputLabel value="CC Mail To: " for="CC"/>
+        <apex:inputText value="{!ccMail}" id="CC"/><br/>
+        <apex:outputLabel value="Reply Mail To: " for="rep"/>
+        <apex:inputText value="{!repMail}" id="rep"/><br/>
+        <apex:commandButton action="{!sendMail}" value="Send Email"/>
+    </apex:form>
+</apex:page>

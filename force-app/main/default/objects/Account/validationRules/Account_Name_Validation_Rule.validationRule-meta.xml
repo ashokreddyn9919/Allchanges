@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Name_Validation_Rule</fullName>
+    <active>false</active>
+    <errorConditionFormula>NOT(REGEX( Name ,&quot;^[a-z  A-Z]*$&quot;))</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Please enter a valid account name.</errorMessage>
+</ValidationRule>

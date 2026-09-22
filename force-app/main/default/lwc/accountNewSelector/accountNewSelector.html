@@ -1,0 +1,39 @@
+<template>
+    <lightning-quick-action-panel header="Select Account Type">
+        <div class="slds-p-around_medium">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" class="slds-m-bottom_small">
+                    <lightning-input
+                        type="checkbox"
+                        label="DNB"
+                        checked={isDnbSelected}
+                        onchange={handleDnbChange}>
+                    </lightning-input>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" class="slds-m-bottom_medium">
+                    <lightning-input
+                        type="checkbox"
+                        label="EPH"
+                        checked={isEphSelected}
+                        onchange={handleEphChange}>
+                    </lightning-input>
+                </lightning-layout-item>
+
+                <template if:true={filteredRecordTypes.length}>
+                    <lightning-layout-item size="12">
+                        <template for:each={filteredRecordTypes} for:item="rt">
+                            <div key={rt.name}
+                                 class="slds-box slds-m-bottom_small recordtype-card"
+                                 data-name={rt.name}
+                                 onclick={handleRecordTypeClick}>
+                                <p class="slds-text-heading_small">{rt.label}</p>
+                                <p class="slds-text-body_small slds-text-color_weak">{rt.description}</p>
+                            </div>
+                        </template>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </div>
+    </lightning-quick-action-panel>
+</template>

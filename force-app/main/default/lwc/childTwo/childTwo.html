@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Child Two" icon-name="standard:people">        
+        <div class="slds-p-around_medium slds-align_absolute-center">
+            <template if:true={ChildSelect2}>
+                <lightning-button variant="success" label="Select" title="Successful action" onclick={handleClickSelect2} class="slds-m-left_x-small"></lightning-button>
+            </template>
+            <template if:false={ChildSelect2}>
+                <lightning-button variant="destructive" label="Deselect" title="Successful action" onclick={handleClickDeselect2} class="slds-m-left_x-small"></lightning-button>
+            </template>            
+        </div>        
+    </lightning-card>
+</template>

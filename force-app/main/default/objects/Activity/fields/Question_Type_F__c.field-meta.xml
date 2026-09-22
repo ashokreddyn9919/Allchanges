@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Question_Type_F__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(CONTAINS(Subject, &quot;Payment&quot;), &quot;Payment&quot;, 
+IF(CONTAINS(Subject, &quot;Electives&quot;), &quot;Electives&quot;, 
+&quot;Others&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Question Type</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

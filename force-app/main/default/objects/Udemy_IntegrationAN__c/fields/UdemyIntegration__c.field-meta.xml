@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UdemyIntegration__c</fullName>
+    <description>This is the MasterDetail field related to Udemy_Integration__c Object</description>
+    <inlineHelpText>This is the MasterDetail field related to Udemy_Integration__c Object</inlineHelpText>
+    <label>UdemyIntegration</label>
+    <referenceTo>Udemy_Integration__c</referenceTo>
+    <relationshipLabel>UdemyIntegrations</relationshipLabel>
+    <relationshipName>Udemy_Integration</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

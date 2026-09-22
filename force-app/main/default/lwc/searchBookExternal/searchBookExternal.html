@@ -1,0 +1,23 @@
+<template>
+    <lightning-card>
+        <h2 slot="title">
+            <lightning-icon icon-name="utility:search" size="small"></lightning-icon>
+            Search BoodRead books to add to Library:</h2>
+            <lightning-input class="slds-m-bottom_small slds-m-left_small slds-m-right_small" placeholder="Enter Titile to search..." onchange={handlerBookSearch} value={BookTitile}></lightning-input>
+            <div class="slds-align_absolute-center">
+                <lightning-button variant="brand" label="Search" onclick={handleKeyChange}></lightning-button>
+            </div>
+            <lightning-layout>
+                <lightning-layout-item size="12">
+                    <div class="custom-box slds-card slds-p-around_small slds-text-align_left slds-text-body_regular">
+                        <p class="title slds-cell-wrap slds-m-bottom_xx-small slds-text-title_bold">Titile: </p>
+                        <p>Image: URL</p>>
+                        <p >Author:</p>
+                        <p >Publisher:</p>
+                        <p >ISBN13:</p>
+                        <p>Year Published:</p>
+                        <p >Average Rating:</p></div>
+                </lightning-layout-item>
+            </lightning-layout>           
+    </lightning-card>
+</template>

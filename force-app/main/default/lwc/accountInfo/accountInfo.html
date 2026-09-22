@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Account Information">
+        <lightning-formatted-text
+            label="Account Name"
+            value={accountname}>
+        </lightning-formatted-text>
+        <lightning-input >
+            label="Street"
+            value={Street}
+            onchange={handleChange}
+            data-id="street"
+        </lightning-input>
+        <lightning-input >
+            label="Billing City"
+            value={BillingCity}
+            onchange={handleChange}
+            data-id="billingcity"
+        </lightning-input>
+        <lightning-input >
+            label="Billing Country"
+            value={billingCountry}
+            onchange={handleChange}
+            data-id="billingCountry"
+        </lightning-input>
+    </lightning-card>
+</template>

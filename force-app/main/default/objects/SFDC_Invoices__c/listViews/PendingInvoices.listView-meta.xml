@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PendingInvoices</fullName>
+    <columns>NAME</columns>
+    <columns>Amount__c</columns>
+    <columns>Purchase_Order__c</columns>
+    <columns>Vendor__c</columns>
+    <columns>ap_manager__c</columns>
+    <columns>Status__c</columns>
+    <columns>Date_Paid__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Paid</value>
+    </filters>
+    <label>Pending Invoices</label>
+</ListView>
