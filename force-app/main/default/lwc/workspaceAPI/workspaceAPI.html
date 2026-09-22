@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Tab Closure Example">
+        <div>
+            <lightning-button label="Simulate Close Tab" onclick={simulateCloseTab}></lightning-button>
+        </div>
+        <template if:true={showPopup}>
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <h2 class="slds-text-heading_medium">Are you sure you want to close this tab?</h2>
+                    </header>
+                    <footer class="slds-modal__footer">
+                        <lightning-button label="Cancel" onclick={handleCancel}></lightning-button>
+                        <lightning-button label="Close Tab" variant="brand" onclick={handleClose}></lightning-button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,77 @@
+<template>
+    <div class="container">
+        <div class="header">
+            <h1>New Account</h1>
+        </div>
+
+        <div class="body">
+            <div class="layout">
+
+                <!-- Left Side -->
+                <div class="left-panel">
+                    <div class="section-title">Account Type</div>
+
+                    <lightning-input
+                        type="checkbox"
+                        label="DNB Accounts"
+                        checked={isDnbSelected}
+                        onchange={handleDnbChange}>
+                    </lightning-input>
+
+                    <lightning-input
+                        class="slds-m-top_small"
+                        type="checkbox"
+                        label="EPH Accounts"
+                        checked={isEphSelected}
+                        onchange={handleEphChange}>
+                    </lightning-input>
+                </div>
+
+                <!-- Right Side -->
+                <div class="right-panel">
+                    <div class="section-title">Select a record type</div>
+
+                    <template if:true={showRecordTypes}>
+                        <template for:each={filteredRecordTypes} for:item="recordType">
+                            <div key={recordType.name} class="recordtype-row">
+                                <lightning-input
+                                    type="radio"
+                                    name="recordTypeSelection"
+                                    label={recordType.label}
+                                    value={recordType.name}
+                                    checked={recordType.checked}
+                                    onchange={handleRecordTypeChange}>
+                                </lightning-input>
+
+                                <div class="recordtype-description">
+                                    {recordType.description}
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+
+                    <template if:false={showRecordTypes}>
+                        <div class="placeholder-text">
+                            Please select DNB Accounts or EPH Accounts.
+                        </div>
+                    </template>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <lightning-button
+                label="Cancel"
+                onclick={handleCancel}>
+            </lightning-button>
+
+            <lightning-button
+                variant="brand"
+                label="Next"
+                class="slds-m-left_small"
+                onclick={handleNext}>
+            </lightning-button>
+        </div>
+    </div>
+</template>

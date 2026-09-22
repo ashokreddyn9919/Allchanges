@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="Opportunity Lookup">
+        <!-- Search by Title -->
+        <lightning-input
+            type="text"
+            label="Search by Title"
+            placeholder="Enter title to filter..."
+            value={searchTitle}
+            onchange={handleTitleSearch}>
+        </lightning-input>
+
+        <!-- Display Filtered Contacts -->
+        <template if:true={contacts}>
+            <div class="contact-list">
+                <template for:each={contacts} for:item="contact">
+                    <div key={contact.Id} class="contact-item">
+                        <lightning-formatted-text value={contact.Name}></lightning-formatted-text>
+                        <span> - </span>
+                        <lightning-formatted-text value={contact.Title}></lightning-formatted-text>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <!-- Error Handling -->
+        <template if:true={error}>
+            <p class="error">Error: {error}</p>
+        </template>
+    </lightning-card>
+
+    <lightning-record-edit-form object-api-name="Contact">
+        <!-- Lookup field for Contact -->
+        <lightning-input-field field-name="AccountId"></lightning-input-field>
+        <lightning-input-field field-name="Name"></lightning-input-field>
+        <!-- Submit Button -->
+        <lightning-button 
+            class="slds-m-top_medium"
+            variant="brand"
+            type="submit"
+            label="Save">
+        </lightning-button>
+    </lightning-record-edit-form>
+
+</template>

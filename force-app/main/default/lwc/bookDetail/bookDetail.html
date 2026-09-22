@@ -1,0 +1,57 @@
+<template>
+   
+    <lightning-card>
+        <h2 slot="title">
+            <lightning-icon icon-name="standard:display_rich_text" size="small"></lightning-icon>
+                Book Details: {bookTitle}</h2>
+        <div slot="actions">
+            <lightning-button label="Update Book" onclick={updateDetails}></lightning-button>
+        </div>
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="6" large-device-size="6">
+                <img src={bookImage} class="portrait slds-align_absolute-center" alt="Book Picture"/>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="6" large-device-size="6">
+                <div class="slds-p-horizontal_small">
+                    <div class="bookProperty">
+                        <span class="label">Author:</span>
+                        <lightning-formatted-text value={bookAuthor}></lightning-formatted-text>
+                    </div>
+                    <div class="bookProperty">
+                        <span class="label">Publisher:</span>
+                        <lightning-formatted-text value={bookPublisher}></lightning-formatted-text>
+                    </div>
+                    <div class="bookProperty">
+                        <span class="label">ISBN13:</span>
+                        <lightning-formatted-text value={bookISBN3}></lightning-formatted-text>
+                    </div>
+                    <div class="bookProperty">
+                        <span class="label">ISBN:</span>
+                        <lightning-formatted-text value={bookISBN}></lightning-formatted-text>
+                    </div>
+                    <div class="bookProperty">
+                        <span class="label">Year Published:</span>
+                        <lightning-formatted-text value={bookYear}></lightning-formatted-text>
+                    </div>
+                    <div class="bookProperty">
+                        <span class="label">Binding:</span>
+                        <lightning-formatted-text value={bookBinding}></lightning-formatted-text>
+                    </div>
+                    <div class="bookProperty">
+                        <span class="label">Number of Pages:</span>
+                        <lightning-formatted-text value={bookPages}></lightning-formatted-text>
+                    </div>
+                    <div class="bookProperty">
+                        <span class="label">Goodreads Id:</span>
+                        <lightning-formatted-text value={bookGoodReads}></lightning-formatted-text>
+                    </div>
+                    <div class="bookProperty">
+                        <span class="label">Average Rating:</span>
+                        <lightning-formatted-text value={Average_Rating__c}></lightning-formatted-text>
+                    </div>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

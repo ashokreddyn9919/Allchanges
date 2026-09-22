@@ -1,0 +1,61 @@
+<template>
+    <lightning-card title="Edit Contact Record" icon-name="standard:contact">
+        <div class="slds-p-horizontal_small">
+            <!-- Record Edit Form -->
+            <lightning-record-edit-form
+                object-api-name={objectApiName}
+                record-id={recordId}
+                onsuccess={handleSuccess}
+                onsubmit={handleSubmit}
+                onerror={handleError}
+            >
+                <lightning-messages></lightning-messages>
+
+                <!-- First Name -->
+                <lightning-input-field 
+                    field-name={FIRST_NAME_FIELD} 
+                    >
+                </lightning-input-field>
+
+                <!-- Last Name -->
+                <lightning-input-field 
+                    field-name={LAST_NAME_FIELD} 
+                    >
+                </lightning-input-field>
+
+                <!-- Email -->
+                <lightning-input-field 
+                    field-name={EMAIL_FIELD} 
+                    >
+                </lightning-input-field>
+
+                <!-- Custom Account Lookup -->
+                <div class="slds-m-bottom_medium">
+                    <label for="accountLookup">Account</label>
+                    <lightning-combobox
+                        name="accountLookup"
+                        placeholder="Select an Account"
+                        options={accountOptions}
+                        value={selectedAccountId}
+                        onchange={handleAccountChange}
+                    ></lightning-combobox>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="slds-m-top_medium">
+                    <lightning-button 
+                        class="slds-m-right_small" 
+                        variant="brand" 
+                        type="submit" 
+                        label="Save" 
+                        disabled={isDirty}>
+                    </lightning-button>
+                    <lightning-button 
+                        variant="neutral" 
+                        label="Cancel">
+                    </lightning-button>
+                </div>
+            </lightning-record-edit-form>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="All Accounts">
+        <lightning-input type="number" lable="Number of Accounts" onchange={numberOfAccountChangeHandler}></lightning-input>
+        <p>
+            <lightning-button label="Get Accounts" onclck={getAccounts}></lightning-button>
+        </p>
+        <lightning-layout>
+            <lightning-layout-item size="6">
+                <ul>
+                    <template if:true={responseReceived}>
+                    <template for:each={accounts} for:item="account">
+                        <li key={account.Id}>
+                            <div class="slds-p-around_medium lgc-bg">
+                                <lightning-tile label={account.Name} type="media">
+                                    <lightning-icon slot="media" icon-name="standard:account"></lightning-icon>
+                                    <p class="slds-truncate" title={account.Phone}>{account.Phone}</p>
+                                </lightning-tile>
+                            </div>
+                        </li>
+                    </template>
+                </template>
+                </ul>
+            </lightning-layout-item>
+        </lightning-layout>        
+    </lightning-card>
+</template>

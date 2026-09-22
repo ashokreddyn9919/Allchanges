@@ -1,0 +1,18 @@
+<template>
+    <div class="slds-p-bottom_small slds-p-left_small slds-p-right_small">
+        <lightning-card class="slds-p-left_small" variant="narrow" icon-name="standard:contact">
+        <h1 slot="title">Contact Quick Create</h1>                       
+        <lightning-record-edit-form object-api-name="Contact">
+        <lightning-messages></lightning-messages>
+        <div class="slds-grid slds-p-left_small">
+            <div class="slds-col">
+                 <lightning-input-field field-name="Name"></lightning-input-field>
+            </div>            
+        </div>
+            <div class="slds-grid slds-m-top_small slds-align_absolute-center">
+                <lightning-button class="slds-m-bottom_medium slds-m-left_small" variant="brand" type="submit" name="submit" onclick={handleClick} label="Create Contact"></lightning-button>
+            </div>            
+        </lightning-record-edit-form>
+    </lightning-card>
+    </div>
+</template>

@@ -1,0 +1,63 @@
+<template>
+    <lightning-card title="Full Calculator" icon-name="custom:custom13" >
+        <div class="slds-p-around_x-small">
+            <p class="slds-text-color_destructive">{errorMessage}</p>
+            <c-calc-demo-child pass-value={expressionValue} pass-label="Calc Expression" ></c-calc-demo-child>
+            <c-calc-demo-child pass-value={resultValue} pass-label="Result" ></c-calc-demo-child>
+           <!-- <lightning-input type="text" name="Expression" label="Calc Expression" value={expressionValue} ></lightning-input>  
+            <lightning-input type="number" name="result" label="Result" value={resultValue} ></lightning-input>  -->
+        </div>
+        
+        <table class="slds-align_absolute-center">
+
+            <tr > 
+                <template iterator:inp={inputRow1} >
+                    <td key={inp.value.id} if:false={inp.last} class="slds-p-around_x-small">
+                        <lightning-button label={inp.value.id} onclick={handleButtonClick}  variant="brand-outline"></lightning-button> 
+                       
+                    </td>     
+                    <td key={inp.value.id} if:true={inp.last} class="slds-p-around_x-small">
+                        <lightning-button label={inp.value.id} onclick={handleButtonClick}  variant="brand"></lightning-button> 
+                    </td>
+                </template>
+            </tr>
+            <tr  > 
+                <template iterator:inp={inputRow2}  >
+                    <td key={inp.value.id} if:false={inp.last} class="slds-p-around_x-small">
+                        <lightning-button label={inp.value.id} onclick={handleButtonClick}  variant="brand-outline"></lightning-button>                         
+                    </td>     
+                    <td key={inp.value.id} if:true={inp.last} class="slds-p-around_x-small">
+                        <lightning-button label={inp.value.id} onclick={handleButtonClick}  variant="brand"></lightning-button> 
+                    </td>
+                </template>
+            </tr>
+            <tr > 
+                <template iterator:inp={inputRow3} >
+                    <td key={inp.value.id} if:false={inp.last} class="slds-p-around_x-small">
+                        <lightning-button label={inp.value.id} onclick={handleButtonClick}  variant="brand-outline"></lightning-button> 
+                    </td>     
+                    <td key={inp.value.id} if:true={inp.last} class="slds-p-around_x-small">
+                        <lightning-button label={inp.value.id} onclick={handleButtonClick}  variant="brand"></lightning-button> 
+                    </td>
+                </template>
+            </tr>
+            <tr > 
+                <td  class="slds-p-around_x-small">
+                    <lightning-button label="CLR" onclick={handleButtonClick}  variant="destructive-text"></lightning-button>
+                </td>     
+                <td class="slds-p-around_x-small">
+                    <lightning-button label="0" onclick={handleButtonClick}  variant="brand-outline"></lightning-button> 
+                </td>
+                <td class="slds-p-around_x-small">
+                    <lightning-button label="=" onclick={handleButtonClick}  variant="success"></lightning-button> 
+                </td>
+                <td class="slds-p-around_x-small">
+                    <lightning-button label="/" onclick={handleButtonClick}  variant="brand"></lightning-button> 
+                </td>
+
+            </tr> 
+        </table>
+        
+
+    </lightning-card>
+</template>

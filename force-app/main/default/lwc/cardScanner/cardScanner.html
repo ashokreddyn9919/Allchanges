@@ -1,0 +1,107 @@
+<template>
+  <article class="slds-card">
+    <div class="slds-card__header slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+        <div class="slds-media__figure">
+          <lightning-icon icon-name="utility:scan" size="small"></lightning-icon>
+        </div>
+        <div class="slds-media__body">
+          <h2 class="slds-card__header-title">
+            <span>Business Card → Lead</span>
+          </h2>
+          <p class="slds-text-body_small slds-truncate">Capture image + OCR + create Lead (fast)</p>
+        </div>
+      </header>
+
+      <div class="slds-no-flex">
+        <lightning-button
+          label={scanButtonLabel}
+          variant="brand"
+          onclick={handleScan}
+          disabled={scanDisabled}>
+        </lightning-button>
+
+        <lightning-button
+          label="Reset"
+          class="slds-m-left_x-small"
+          onclick={handleReset}
+          disabled={resetDisabled}>
+        </lightning-button>
+
+        <lightning-button
+          label="Mock Scan"
+          class="slds-m-left_x-small"
+          onclick={handleMockScan}
+          disabled={scanDisabled}>
+        </lightning-button>
+      </div>
+    </div>
+
+    <div class="slds-card__body slds-card__body_inner">
+      <template if:true={isScanning}>
+        <div class="slds-m-vertical_small slds-align_absolute-center">
+          <lightning-spinner alternative-text="Scanning..." size="medium"></lightning-spinner>
+        </div>
+      </template>
+
+      <template if:true={isSaving}>
+        <div class="slds-m-vertical_small slds-align_absolute-center">
+          <lightning-spinner alternative-text="Creating Lead..." size="medium"></lightning-spinner>
+        </div>
+        <p class="slds-text-align_center slds-text-body_small">Creating Lead… please wait</p>
+      </template>
+
+      <template if:true={errorMessage}>
+        <div class="slds-notify slds-notify_alert slds-alert_error slds-m-top_small" role="alert">
+          <span class="slds-assistive-text">Error</span>
+          <h2>{errorMessage}</h2>
+        </div>
+      </template>
+
+      <template if:false={mobileSupported}>
+        <div class="slds-notify slds-notify_alert slds-alert_warning slds-m-top_small" role="alert">
+          <span class="slds-assistive-text">Warning</span>
+          <h2>DocumentScanner not available. Please open in Salesforce Mobile App.</h2>
+        </div>
+      </template>
+
+      <lightning-textarea
+        class="slds-m-top_small"
+        label="Raw OCR Text"
+        value={rawText}
+        readonly
+        placeholder="Scan a business card to see OCR text here">
+      </lightning-textarea>
+
+      <div class="slds-grid slds-wrap slds-m-top_small">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-right_small">
+          <lightning-input label="Full Name" value={fullName} onchange={onFullNameChange}></lightning-input>
+          <lightning-input class="slds-m-top_small" label="Email" type="email" value={email} onchange={onEmailChange}></lightning-input>
+          <lightning-input class="slds-m-top_small" label="Phone" type="tel" value={phone} onchange={onPhoneChange}></lightning-input>
+          <lightning-input class="slds-m-top_small" label="Fax" value={fax} onchange={onFaxChange}></lightning-input>
+        </div>
+
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-left_small">
+          <lightning-input label="Company" value={company} onchange={onCompanyChange}></lightning-input>
+          <lightning-input class="slds-m-top_small" label="Location/Address" value={locationText} onchange={onLocationTextChange}></lightning-input>
+
+          <lightning-input class="slds-m-top_small" label="Facebook" value={facebook} onchange={onFacebookChange}></lightning-input>
+          <lightning-input class="slds-m-top_small" label="Instagram" value={instagram} onchange={onInstagramChange}></lightning-input>
+
+          <div class="slds-m-top_medium">
+            <lightning-button
+              label={createButtonLabel}
+              variant="success"
+              onclick={handleCreateLead}
+              disabled={createDisabled}>
+            </lightning-button>
+          </div>
+
+          <template if:true={hasImage}>
+            <p class="slds-m-top_small slds-text-body_small">✅ Image captured (will attach after Lead creation)</p>
+          </template>
+        </div>
+      </div>
+    </div>
+  </article>
+</template>

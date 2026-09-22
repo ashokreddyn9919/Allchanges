@@ -1,0 +1,21 @@
+<aura:component implements="lightning:availableForFlowScreens" access="global">
+    <aura:attribute name="value" type="string" access="global"/>
+    <aura:attribute name="label" type="string" access="global"/>
+    <aura:attribute name="required" type="Boolean" access="global" default="false"/>
+    <aura:attribute name="placeHolder" type="string" access="global"/>
+	
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="validate" type="Aura.Action"
+                    description="Custom validation function to run when the flow is navigated to the next screen.
+                                 The function must evaluate the component and return values for isValid and errorMessage."/>
+    
+    <lightning:inputRichText value="{!v.value}"
+                             required="{!v.required}"
+                             placeholder="{!v.placeHolder}"
+                             labelVisible="true"
+                             variant="bottom-toolbar"
+                             label="{!v.label}">
+        <lightning:insertImageButton/>
+    </lightning:inputRichText>
+        
+</aura:component>

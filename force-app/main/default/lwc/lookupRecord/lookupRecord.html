@@ -1,0 +1,47 @@
+<template>
+    <template if:false={showContact}>
+        <lightning-card title="Search Account" icon-name="standard:account">
+            <div class="slds-var-m-around_medium">
+                <lightning-input type="search" onchange={handleKeyChange} value={searchKey}></lightning-input>
+                <template if:true={accounts.data}>
+                    <template if:true={searchKey}>
+                        <template for:each={accounts.data} for:item="account">
+                            <div class="slds-grid slds-grid_vertical" key={account.Id}>
+                                <div class="slds-col">
+                                    <span>
+                                        <button class="slds-button" onclick={handleClick} value={account.Id}>
+                                            <lightning-card title={account.Name} icon-name="standard:account">
+                                                &emsp;{account.AccountNumber} ● {account.Industry} ● {account.Type} ● {account.AnnualRevenue}
+                                            </lightning-card>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                </template>
+            </div>
+        </lightning-card>
+    </template>
+
+    <template if:true={showContact}>
+        <lightning-card title="Selected Account" icon-name="standard:account">
+            <template for:each={accounts1.data} for:item="acc">
+                <div key={acc.Id}>
+                    <b>&emsp;{acc.Name}</b><br>
+                    &emsp;{acc.AccountNumber} ● {acc.Industry} ● {acc.Type} ● {acc.AnnualRevenue}
+                </div>
+            </template>
+            <div class="slds-align_absolute-center">
+                <lightning-button variant="brand" label="Reset Search" onclick={handleReset}></lightning-button>
+            </div>
+        </lightning-card>
+        <div style="height: 300px;">
+            <lightning-datatable
+                    key-field="Id"
+                    data={contacts.data}
+                    columns={columns}>
+            </lightning-datatable>
+        </div>
+    </template>
+</template>

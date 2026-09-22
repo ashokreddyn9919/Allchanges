@@ -1,0 +1,14 @@
+.list-first {
+    border-top: 1px solid black;
+    padding-top: 5px;
+}
+.list-last {
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+.list-all{
+		padding:5px;
+}
+th {
+	background-color: #dddddd;
+}

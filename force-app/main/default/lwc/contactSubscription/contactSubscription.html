@@ -1,0 +1,16 @@
+<template>
+    <div>
+        <lightning-card class="slds-p-left_small" variant="narrow" icon-name="standard:contact">
+            <h1 slot="title">Contact Detail Subscription</h1>
+            <div class="slds-grid slds-m-top_large slds-text-align_center slds-border_top slds-border_bottom">
+                <lightning-button class="slds-m-bottom_medium slds-m-left_large" variant="brand" onclick={handleClickSub} label="Subscribe"></lightning-button>
+                <lightning-button class="slds-m-bottom_medium slds-m-left_large" variant="destructive" onclick={handleClickUnsub} label="Unsubscribe"></lightning-button>
+                <lightning-button class="slds-m-bottom_medium slds-m-left_large" variant="neutral" onclick={handleClickClear} label="Clear"></lightning-button>
+            </div>
+            <p class="slds-p-horizontal_small">
+                Message Received: 
+                <lightning-formatted-text value={message}></lightning-formatted-text>
+            </p>
+        </lightning-card>
+    </div>
+</template>

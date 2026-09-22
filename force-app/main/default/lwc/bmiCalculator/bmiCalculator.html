@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title={cardTitle} padding="around-medium">
+        <lightning-layout multiple-rows>
+        <lightning-layout-item size="12" padding="around-small">
+            <lightning-input type="number" step="0.01" label="Weight in Killogram:" onchange={weightchangeHandler}></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="12" padding="around-small">
+            <lightning-input type="number" step="0.01" label="Height in Meter:" onchange={heightchangeHandler}></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="12" padding="around-small">
+            <lightning-button label="Get BMI" onclick={calculateBMI}></lightning-button>
+            <p>
+                {bmiValue}
+            </p>
+        </lightning-layout-item>
+    </lightning-layout>
+    </lightning-card>
+</template>

@@ -1,0 +1,8 @@
+.slds-form-element {
+    margin-bottom: 1rem;
+}
+
+.slds-grid {
+    display: flex;
+    gap: 1rem;
+}

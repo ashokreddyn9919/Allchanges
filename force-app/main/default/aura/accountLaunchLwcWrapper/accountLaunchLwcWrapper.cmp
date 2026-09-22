@@ -1,0 +1,3 @@
+<aura:component implements="lightning:actionOverride,lightning:isUrlAddressable,flexipage:availableForAllPageTypes,force:appHostable">
+    <c:accountNewRecordTypeSelector/>
+</aura:component>

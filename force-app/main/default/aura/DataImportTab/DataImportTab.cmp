@@ -1,0 +1,53 @@
+<aura:component implements="force:appHostable" controller="DataImportController">
+    <aura:attribute access="private" type="String" name="status" default="loading"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}"/>
+    <c:ServerActionService aura:id="server"/>
+
+    <lightning:card title="Import Sample Data" iconName="standard:entity">
+        <div class="slds-p-horizontal_medium">
+
+            <!-- Loading -->
+            <div class="{! v.status == 'loading' ? 'slds-m-around_xx-large slds-align_absolute-center' : 'slds-hide' }">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>            
+            
+            <!-- Import form -->
+            <div class="{! v.status == 'ready' ? '' : 'slds-hide' }">
+                <p>Click the button below to initialize the sample data.</p>
+                <p class="slds-m-top_x-small slds-text-color_error">All existing Solar Bot and Solar Bot Status records will be deleted.</p>
+                <div class="slds-m-top_medium slds-align_absolute-center">
+                    <lightning:button label="Import" variant="brand" onclick="{!c.startImport}"/>
+                </div>
+            </div>
+
+            <!-- Importing message -->
+            <div class="{! v.status == 'importing' ? 'slds-m-around_xx-large slds-align_absolute-center' : 'slds-hide' }">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand slds-spinner_inline slds-m-right_large">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+                <p class="slds-m-bottom_large">Sample data is being generated, this takes a couple of minutes.<br/>
+                This page will automatically refresh when import is complete.</p>
+            </div>
+            
+            <!-- Success message -->
+            <div class="{! v.status == 'success' ? 'slds-m-around_xx-large slds-align_absolute-center' : 'slds-hide' }">
+                <div class="slds-media slds-media_center">
+                    <div class="slds-media__figure">
+                        <lightning:icon iconName="utility:success" alternativeText="Success" size="small" class="success"/>
+                    </div>
+                    <div class="slds-media__body">
+                        <p class="slds-text-color_success">Sample data was successfully generated.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </lightning:card>
+</aura:component>

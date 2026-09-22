@@ -1,0 +1,57 @@
+<template>
+  <article class="slds-card">
+    <div class="slds-card__header slds-grid slds-grid_align-spread">
+      <div class="slds-media slds-media_center">
+        <div class="slds-media__figure">
+          <lightning-icon icon-name="utility:scan" size="small"></lightning-icon>
+        </div>
+        <div class="slds-media__body">
+          <h2 class="slds-card__header-title">Business Card → Lead</h2>
+          <p class="slds-text-body_small">Capture image + OCR + create Lead</p>
+        </div>
+      </div>
+
+      <div class="slds-no-flex">
+        <lightning-button label="Scan Card" variant="brand" onclick={handleScan}></lightning-button>
+      </div>
+    </div>
+
+    <div class="slds-card__body slds-card__body_inner">
+      <template if:true={errorMessage}>
+        <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+          <span class="slds-assistive-text">Error</span>
+          <h2>{errorMessage}</h2>
+        </div>
+      </template>
+
+      <lightning-textarea
+        class="slds-m-top_small"
+        label="Raw OCR Text"
+        value={rawText}
+        readonly>
+      </lightning-textarea>
+
+      <div class="slds-m-top_small slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-right_small">
+          <lightning-input label="Full Name" value={fullName} onchange={onFullNameChange}></lightning-input>
+          <lightning-input label="Email" value={email} onchange={onEmailChange} class="slds-m-top_small"></lightning-input>
+          <lightning-input label="Phone" value={phone} onchange={onPhoneChange} class="slds-m-top_small"></lightning-input>
+        </div>
+
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-left_small">
+          <lightning-input label="Company" value={company} onchange={onCompanyChange}></lightning-input>
+          <lightning-input label="Location/Address" value={locationText} onchange={onLocationTextChange} class="slds-m-top_small"></lightning-input>
+
+          <div class="slds-m-top_medium">
+            <lightning-button
+              label="Create Lead"
+              variant="success"
+              onclick={handleCreateLead}
+              disabled={createDisabled}>
+            </lightning-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</template>

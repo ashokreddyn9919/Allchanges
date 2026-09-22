@@ -1,0 +1,137 @@
+<template>
+        <div class="slds-p-bottom_small slds-p-left_small slds-p-right_small">
+        <lightning-card class="slds-p-left_small" variant="narrow" icon-name="standard:account">
+            <h1 slot="title">Account Quick Create</h1>
+            <div slot="actions">
+                <template if:true={ShowButon}>
+                    <lightning-button label="Show All Account Fields" class="slds-button_stretch" onclick={handleShowAccounts} slot="actions" ></lightning-button>
+                </template>
+                <template if:false={ShowButon}>
+                    <lightning-button label="Show Required Account Fields" class="slds-button_stretch" onclick={handleHideAccounts} slot="actions" ></lightning-button>
+                </template>                
+            </div>                            
+        <lightning-record-edit-form object-api-name="Account">
+            <lightning-messages></lightning-messages>
+            <div class="slds-grid slds-p-left_small">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field field-name="Name"></lightning-input-field>
+                    <template if:true={AccountRecords}>
+                        <lightning-input-field field-name="Rating"></lightning-input-field>
+                        <lightning-input-field field-name="ParentId"></lightning-input-field>
+                        <lightning-input-field field-name="Fax"></lightning-input-field>
+                        <lightning-input-field field-name="AccountNumber"></lightning-input-field>
+                    </template>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field field-name="Phone"></lightning-input-field>
+                    <template if:true={AccountRecords}>
+                        <lightning-input-field field-name="Website"></lightning-input-field>
+                        <lightning-input-field field-name="Industry"></lightning-input-field>
+                        <lightning-input-field field-name="AnnualRevenue"></lightning-input-field>
+                        <lightning-input-field field-name="Type"></lightning-input-field>
+                    </template>
+                </div>
+            </div>
+            <div class="slds-grid slds-m-top_small slds-align_absolute-center">
+                    <lightning-button class="slds-m-bottom_medium" label="Cancel" onclick={handleAccountReset}></lightning-button> 
+                    <lightning-button class="slds-m-bottom_medium slds-m-left_small" variant="brand" type="submit" name="submit" label="Create Account"></lightning-button>
+            </div>            
+        </lightning-record-edit-form>
+        <div slot="footer">
+            <p>Account Quick Creation!!</p>
+        </div>           
+        </lightning-card>
+        </div>
+
+    <div class="slds-p-bottom_small slds-p-left_small slds-p-right_small">
+        <lightning-card class="slds-p-left_small" variant="narrow" icon-name="standard:contact">
+        <h1 slot="title">Contact Quick Create</h1>
+        <div slot="actions">
+            <template if:true={ShowConButon}>
+                <lightning-button label="Show All Contact Fields" class="slds-button_stretch" onclick={handleShowContacts} slot="actions" ></lightning-button>
+            </template>
+            <template if:false={ShowConButon}>
+                <lightning-button label="Show Required Contact Fields" class="slds-button_stretch" onclick={handleHideContacts} slot="actions" ></lightning-button>
+            </template>                
+        </div>                            
+        <lightning-record-edit-form object-api-name="Contact">
+        <lightning-messages></lightning-messages>
+        <div class="slds-grid slds-p-left_small">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="Name"></lightning-input-field>
+                <template if:true={ContactRecords}>
+                    <lightning-input-field field-name="HomePhone"></lightning-input-field>
+                    <lightning-input-field field-name="AccountId"></lightning-input-field>
+                    <lightning-input-field field-name="Fax"></lightning-input-field>
+                    <lightning-input-field field-name="MobilePhone"></lightning-input-field>
+                    <lightning-input-field field-name="Department"></lightning-input-field>
+                </template>
+            </div>
+            <div class="slds-col slds-size_1-of-2">                
+                <template if:true={ContactRecords}>
+                    <lightning-input-field field-name="Phone"></lightning-input-field>
+                    <lightning-input-field field-name="Email"></lightning-input-field>
+                    <lightning-input-field field-name="Birthdate"></lightning-input-field>
+                    <lightning-input-field field-name="MailingAddress"></lightning-input-field>
+                    <lightning-input-field field-name="Title"></lightning-input-field>
+                </template>
+            </div>
+        </div>
+            <div class="slds-grid slds-m-top_small slds-align_absolute-center">
+                    <lightning-button class="slds-m-bottom_medium" label="Cancel" onclick={handleContactReset}></lightning-button> 
+                    <lightning-button class="slds-m-bottom_medium slds-m-left_small" variant="brand" type="submit" name="submit" label="Create Contact"></lightning-button>
+            </div>            
+        </lightning-record-edit-form>
+        <div slot="footer">
+            <p>Contact Quick Creation!!</p>
+        </div>
+    </lightning-card>
+    </div>
+
+    <div class="slds-p-bottom_small slds-p-left_small slds-p-right_small">
+        <lightning-card class="slds-p-left_small" variant="narrow" icon-name="standard:opportunity">
+        <h1 slot="title">Opportunity Quick Create</h1>
+        <div slot="actions">
+            <template if:true={ShowOppButon}>
+                <lightning-button label="Show All Opportunity Fields" class="slds-button_stretch" onclick={handleShowOpportunity} slot="actions" ></lightning-button>
+            </template>
+            <template if:false={ShowOppButon}>
+                <lightning-button label="Show Required Opportunity Fields" class="slds-button_stretch" onclick={handleHideOpportunity} slot="actions" ></lightning-button>
+            </template>                
+        </div>                            
+        <lightning-record-edit-form object-api-name="Opportunity">
+        <lightning-messages></lightning-messages>
+        <div class="slds-grid slds-p-left_small">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="Name"></lightning-input-field>
+                <lightning-input-field field-name="StageName"></lightning-input-field>
+                <template if:true={OpportunityRecords}>
+                    <lightning-input-field field-name="Amount"></lightning-input-field>
+                    <lightning-input-field field-name="CloseDate"></lightning-input-field>
+                    <lightning-input-field field-name="StageName"></lightning-input-field>
+                    <lightning-input-field field-name="AccountId"></lightning-input-field>
+                    <lightning-input-field field-name="LeadSource"></lightning-input-field>                  
+                </template>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="CloseDate"></lightning-input-field>                           
+                <lightning-input-field field-name="AccountId"></lightning-input-field>       
+                <template if:true={OpportunityRecords}>
+                    <lightning-input-field field-name="NextStep"></lightning-input-field>
+                    <lightning-input-field field-name="Type"></lightning-input-field>
+                    <lightning-input-field field-name="Probability"></lightning-input-field>
+                    <lightning-input-field field-name="TrackingNumber__c"></lightning-input-field>                    
+                </template>
+            </div>
+        </div>
+            <div class="slds-grid slds-m-top_small slds-align_absolute-center">
+                    <lightning-button class="slds-m-bottom_medium" label="Cancel" onclick={handleOppReset}></lightning-button> 
+                    <lightning-button class="slds-m-bottom_medium slds-m-left_small" variant="brand" type="submit" name="submit" label="Create Opportunity"></lightning-button>
+            </div>            
+        </lightning-record-edit-form>
+        <div slot="footer">
+            <p>Opportunity Quick Creation!!</p>
+        </div>
+    </lightning-card>
+    </div>
+</template>

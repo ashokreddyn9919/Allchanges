@@ -1,0 +1,14 @@
+<template>    
+    <lightning-input
+                    name="search"
+                    class="slds-m-bottom_small"  
+                    label="Search Account Name"
+                    onchange={handleKeyChange}
+                    type="Search"
+                    placeholder="Enter account name..."
+                    value={accountName}>
+    </lightning-input>
+        <template for:each={accountList} for:item="accObj" for:index="index">
+            <option key={accObj.Id}>{accObj.Name}-{accObj.AccountNumber}-{accObj.Type}-{accObj.AnnualRevenue}-{accObj.Industry}</option> 
+        </template>
+</template>
