@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>activated__c</columns>
+    <columns>default_currency__c</columns>
+    <columns>email__c</columns>
+    <columns>Is_Active__c</columns>
+    <columns>Is_Admin__c</columns>
+    <columns>last_login__c</columns>
+    <columns>locale__c</columns>
+    <columns>phone__c</columns>
+    <columns>Pipedrive_Id__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

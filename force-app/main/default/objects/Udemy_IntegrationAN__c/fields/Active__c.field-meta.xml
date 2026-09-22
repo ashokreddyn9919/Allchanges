@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active__c</fullName>
+    <defaultValue>&quot;904242&quot;</defaultValue>
+    <description>This is the field created from Custom Metadata</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the field created from Custom Metadata</inlineHelpText>
+    <label>Active</label>
+    <length>60</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

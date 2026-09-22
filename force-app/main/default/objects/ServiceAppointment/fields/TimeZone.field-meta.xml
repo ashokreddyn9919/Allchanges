@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TimeZone</fullName>
+    <inlineHelpText>Specifies the time zone recorded when the appointment was booked or last modified (typically this is the patient&apos;s time zone). This may differ from the time zone used in the service appointment&apos;s scheduled start and end times, which reflect the logged in user’s time zone.</inlineHelpText>
+    <trackHistory>false</trackHistory>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Test1</fullName>
+    <fields>Id__c</fields>
+    <fields>Name</fields>
+    <fields>Pipeline_Name__c</fields>
+    <label>Test1</label>
+</CompactLayout>

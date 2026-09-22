@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>deleted__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Deleted in Freshdesk</inlineHelpText>
+    <label>deleted</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
