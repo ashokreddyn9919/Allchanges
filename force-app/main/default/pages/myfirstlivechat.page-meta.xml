@@ -3,8 +3,7 @@
     <apiVersion>52.0</apiVersion>
     <availableInTouch>false</availableInTouch>
     <confirmationTokenRequired>false</confirmationTokenRequired>
-    <description>Default Salesforce Sites Forgot Password Confirmation page</description>
-    <label>ForgotPassword</label>
+    <label>myfirstlivechat</label>
     <packageVersions>
         <majorNumber>232</majorNumber>
         <minorNumber>0</minorNumber>

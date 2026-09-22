@@ -11,7 +11,7 @@
                 <apex:image url="{!URLFOR($Resource.SiteSamples, 'img/clock.png')}"/>
                 <apex:panelGroup >
                   <br/>
-                  <apex:outputText styleClass="title" value="{!$Label.site.thank_you_for_registering}"/>
+                  <apex:outputText styleClass="title" value="{!$Label.site.thank_you_for_submitting_registration_request}"/>
                   <br/>
                   <br/>
                   <apex:outputLink value="{!$Page.CommunitiesLogin}" rendered="{!$Site.LoginEnabled}">{!$Label.site.go_to_login_page}</apex:outputLink>
